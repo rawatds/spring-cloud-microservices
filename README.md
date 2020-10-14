@@ -34,7 +34,7 @@ curl --location --request POST 'http://localhost:9000/orders' \
 ```
 
 
-1. To add a new order-payment
+2. To add a new order-payment
 ```
 curl --location --request POST 'http://localhost:9000/orders-payments' \
 --header 'Content-Type: application/json' \
@@ -47,7 +47,7 @@ curl --location --request POST 'http://localhost:9000/orders-payments' \
 }'
 ```
 
-2. To view a dummy order-payment data
+3. To view a dummy order-payment data
 ```
 curl --location --request GET 'http://localhost:9000/orders-payments' 
 ```
