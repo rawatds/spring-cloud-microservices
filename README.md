@@ -27,7 +27,7 @@ Run all the servers int the order specified above.
 curl --location --request POST 'http://localhost:9000/orders' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "name" : "Jeyboard",
+    "name" : "Keyboard",
     "qty": 1,
     "amount": 1500
 }'
