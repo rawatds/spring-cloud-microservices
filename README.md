@@ -17,7 +17,7 @@ _(written in the order of their execution)_
   - **hystrix-dashboard:** Its an optional service and used to trace fallbacks due to unavailablity of any microservices. So, basically its used to check how many failure are there if a microservice is down or unavailable. Its running on port 9100.
 
 Also:
-  - There is a CircuitBreaker functionality also implemented. So, if any on the order-service or payment-service is down, it will show proper error message to the user instead of generic 5xx error codes and non-user friendly messages.
+  - A CircuitBreaker functionality is also implemented here. So, if any on the order-service or payment-service is down, it will show proper error message to the user instead of generic 5xx error codes and non-user friendly messages.
 
 ### How To test
 Run all the servers int the order specified above.
