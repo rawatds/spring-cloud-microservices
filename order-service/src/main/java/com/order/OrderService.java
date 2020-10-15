@@ -1,21 +1,36 @@
 package com.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
 @Service
+@RefreshScope
+@EnableConfigurationProperties
+
 public class OrderService {
 
     @Autowired
     private OrderRepository repository;
 
     @Autowired
+    @Lazy
     private RestTemplate template;
 
-    final String paymentUrl = "http://PAYMENT-SERVICE/payments";
+    // This is without cloud-config-server
+    // final String paymentUrl = "http://PAYMENT-SERVICE/payments";
+
+    // With cloud-server-config
+    //@Value("${microservice.paymentservice.endpoints.endpoint.uri}")
+    @Value("${paymenturl}")
+    private String paymentUrl;
+
 
     public Order saveOrder(Order order) {
         return repository.save(order);

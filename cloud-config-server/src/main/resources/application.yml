@@ -1,0 +1,38 @@
+server:
+  port: 9200
+
+spring:
+  application:
+    name: CLOUD-CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/rawatds/cloud-config.git
+          #uri: file:///${user.home}/config-server
+          #uri: file:///C:/Users/dharmender.rawat/config-server
+          force-pull: true
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:9761/eureka/
+#  instance:
+#    hostname: localhost
+
+#health:
+#  config:
+#    enabled: true
+
+management:
+  health:
+    defaults:
+      enabled: false
+    consul:
+      enabled: false
+
+logging:
+  level:
+    root: debug

@@ -1,6 +1,7 @@
 package com.payment;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,8 @@ public class PaymentService {
     @Autowired
     PaymentRepository repo;
 
+    //@Value("${paymenturl}")
+    //private String paymentUrl;
 
     public Payment savePayment(Payment payment) {
         payment.setTransactionId(UUID.randomUUID().toString());
@@ -19,7 +22,9 @@ public class PaymentService {
     }
 
     public List<Payment> retrieveAllPayments() {
+        //System.out.println("***********" + paymentUrl);
         System.out.println("Retrieving all payments...");
+
         return repo.findAll();
     }
 }

@@ -27,14 +27,6 @@
                   name: payment-service-fallback-filter
                   fallbackuri: forward:/paymentFallback
 
-  eureka:
-    client:
-      fetch-registry: true
-      register-with-eureka: true
-      service-url:
-         defaultZone: http://localhost:8761/eureka
-    instance: localhost
-
   management:
     endpoints:
       web:

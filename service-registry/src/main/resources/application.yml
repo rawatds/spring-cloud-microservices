@@ -1,10 +1,9 @@
 server:
-  port: 8761
+  port: 9761
 
 eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
-  server:
-    enable-self-preservation: false
-
+#  server:
+#    enable-self-preservation: false
