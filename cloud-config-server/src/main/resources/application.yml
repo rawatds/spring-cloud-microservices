@@ -13,14 +13,14 @@ spring:
           uri: file:///C:/Users/dharmender.rawat/config-server
           force-pull: true
 
-#eureka:
-#  client:
+eureka:
+  client:
 #    register-with-eureka: true
 #    fetch-registry: true
-#    service-url:
-#      defaultZone: http://localhost:9761/eureka/
-#  instance:
-#    hostname: localhost
+    service-url:
+      defaultZone: http://localhost:9761/eureka/
+  instance:
+    hostname: localhost
 
 #health:
 #  config:
@@ -35,4 +35,4 @@ management:
 
 logging:
   level:
-    root: debug
+    root: info
