@@ -8,9 +8,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/rawatds/cloud-config.git
+          #uri: https://github.com/rawatds/cloud-config.git
           #uri: file:///${user.home}/config-server
-          #uri: file:///C:/Users/dharmender.rawat/config-server
+          uri: file:///C:/Users/dharmender.rawat/config-server
           force-pull: true
 
 #eureka:
