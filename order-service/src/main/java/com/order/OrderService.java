@@ -2,7 +2,7 @@ package com.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+//import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -12,8 +12,6 @@ import java.util.List;
 
 @Service
 @RefreshScope
-@EnableConfigurationProperties
-
 public class OrderService {
 
     @Autowired
@@ -27,8 +25,8 @@ public class OrderService {
     // final String paymentUrl = "http://PAYMENT-SERVICE/payments";
 
     // With cloud-server-config
-    //@Value("${microservice.paymentservice.endpoints.endpoint.uri}")
-    @Value("${paymenturl}")
+    @Value("${microservice.payment-service.endpoints.endpoint.uri}")
+    //@Value("${paymenturl}")
     private String paymentUrl;
 
 
@@ -58,6 +56,7 @@ public class OrderService {
         Order order = new Order(100, "Keyboard", 10, 2000);
         //Payment payment = new Payment(200, "success", "111-ddd-eee-222", 100, 2000);
 
+        System.out.println("***paymenturl: "+ paymentUrl);
         Payment payment = template.getForObject(paymentUrl+"/1", Payment.class);
 
         return new Transaction(order, payment);

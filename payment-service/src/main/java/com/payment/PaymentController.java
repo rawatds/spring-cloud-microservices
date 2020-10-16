@@ -26,6 +26,6 @@ public class PaymentController {
 
     @GetMapping("/payments/1")
     public Payment getOnePayments() {
-        return new Payment(100, "success", "aa-bb-cc", 100, 2000);
+        return new Payment(100, "success", "dummy-trnsacton-id-aa-bb-cc", 100, 2000);
     }
 }
