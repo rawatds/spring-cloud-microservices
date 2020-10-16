@@ -10,7 +10,7 @@ These microservices are developed in Java 8, SpringBoot 2.3.4.RELEASE, H2 in-mem
 ## Main components/services
 _(written in the order of their execution)_
 
-  - **service-registry:** This is a Eureka service registry to register all services, their host, ports, etc. Its running on port 8761.
+  - **service-registry:** This is a Eureka service registry to register all services, their host, ports, etc. Its running on port 8761 (changed the port to 9761 to verify if other components are still able to access it, rather contacting the detault 8761 port).
   - **config-server:** This is used to load all common or service specific configuration from a repository or file system. Its running on port 9200.
   - **order-service:** This is a sample order microservice. All the url patterns for this service starts with ```/orders``` string. Its running on port 9001.
   - **payment-service:** This is a sample payment microservice. All the url patterns for this service starts with ```/payments``` string. Its running on port 9002.
